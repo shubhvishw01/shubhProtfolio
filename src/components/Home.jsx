@@ -3,19 +3,40 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <section className="h-[80vh] flex flex-col items-center justify-center text-center px-6">
+    <section className="py-10 flex flex-col items-center justify-center text-center px-6">
       <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-10">
-        <div className="flex flex-col gap-4 w-full md:w-1/2">
-          <p className="md:text-2xl text-gray-600">
-            Hi, I'm Shubham Vishwakarma 👋 I'm a React Developer with 1+ year of
-            experience building fast and responsive web apps. I specialize in
-            ReactJS, Redux, and modern frontend development tools. Currently
-            working at HP Software India, I focus on clean code and performance
-            optimization. Let’s connect and build something amazing together!
+        <div className="flex flex-col gap-6 w-full md:w-1/2 animate-fade-in-up">
+          {/* <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-lg"> */}
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+            Hi, I'm{" "}
+            <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text">
+              Shubham Vishwakarma
+            </span>{" "}
+            <span className="inline-block animate-wiggle">👋</span>
+          </h2>
+
+          <p className="text-gray-600 text-base md:text-xl leading-relaxed">
+            I'm a{" "}
+            <span className="font-semibold text-blue-600">React Developer</span>{" "}
+            with 1+ year of experience building fast and responsive web apps. I
+            specialize in{" "}
+            <span className="font-medium text-purple-600">ReactJS, Redux</span>,
+            and modern frontend development tools. Currently working at{" "}
+            <span className="text-green-600 font-medium">
+              HP Software India
+            </span>
+            , I focus on clean code and performance optimization. Let’s connect
+            and build something amazing together!
           </p>
+          {/* </div> */}
         </div>
-        <div className="flex flex-col gap-4 w-full md:w-1/2">
-          <p>Shubham Vishwakarma</p>
+
+        <div className="flex justify-center md:justify-center w-full md:w-1/3">
+          <img
+            src="/Profile.jpg" // 👈 yahan apni image ka path/URL daalo
+            alt="Profile"
+            className="w-95 h-120  object-cover shadow-lg border-4 border-none"
+          />
         </div>
       </div>
 

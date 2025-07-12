@@ -3,8 +3,9 @@ import React from "react";
 const Projects = () => {
   const projectList = [
     {
-      name: "UK Mobility",
-      description: "Transport dashboard using MERN stack.",
+      name: "Inventory Management System",
+      description:
+        "Dashboard Stayem for Hardware organization using MERN stack.",
     },
     {
       name: "Portfolio Website",
