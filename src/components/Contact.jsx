@@ -9,20 +9,28 @@ const Contact = () => {
         <a
           href="mailto:shubh.vishw01@gmail.com"
           className="text-blue-600 underline"
+          target="_blank"
         >
           📧 Email: shubh.vishw01@gmail.com
         </a>
       </p>
       <p className="text-gray-600 text-lg">
-        <a href="https://www.linkedin.com/in/shubham-vishwakarma-ab609a219">
+        <a
+          href="https://www.linkedin.com/in/shubham-vishwakarma-ab609a219"
+          target="_blank"
+        >
           🔗 LinkedIn
         </a>
       </p>
       <p className="text-gray-600 text-lg">
-        💻 GitHub: github.com/shubhvishw01
+        <a href="http://github.com/shubhvishw01" target="_blank">
+          💻 GitHub
+        </a>
       </p>
       <p className="text-gray-600 text-lg">
-        🌐 Portfolio: shubhvishw01.vercel.app
+        <a href="https://shubh-protfolio-ryt2.vercel.app/" target="_blank">
+          🌐 Portfolio
+        </a>
       </p>
       <p className="text-gray-600 text-lg">📱 +91 8357847811</p>
       <p className="text-gray-600 text-lg">📍 Indore, India</p>
