@@ -8,7 +8,7 @@ const Layout = () => {
       <main className="flex-grow pt-20">
         <Outlet />
       </main>
-      <footer className="text-center text-gray-600 py-4 text-sm">
+      <footer className="text-center bg-emerald-100 text-gray-600 py-4 text-sm">
         © 2025 Shubham Vishwakarma
       </footer>
     </div>
