@@ -26,24 +26,24 @@ function ContactForm() {
     }
 
     const scriptURL =
-      "https://script.google.com/macros/s/AKfycbxqup5FtazJc7E6Sx3KWrM17-ScQZ-_im3VctN06_kbI9XKtZbE8UN4dnl3JKVhmYzF/exec"; // ✅ Make sure it's the FULL DEPLOYED URL
+      "https://script.google.com/macros/s/AKfycbw6lQ_e_IyJ-xnhuEUWA4_uejWWH8N7ZIVTLnWteBp-sYVou9G0H-4OPSvrO0sQ10Iw/exec"; // ✅ Make sure it's the FULL DEPLOYED URL
 
     try {
       const response = await fetch(scriptURL, {
         method: "POST",
-        // mode: "no-cors", // ✅ Use no-cors mode for Google Apps Script
+        mode: "no-cors", // ✅ Use no-cors mode for Google Apps Script
         headers: {
           "Content-Type": "application/json", // ✅ Tell server it's JSON
         },
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+      // if (!response.ok) {
+      //   throw new Error("Network response was not ok");
+      // }
 
-      const result = await response.json();
-      console.log("Success:", result);
+      // const result = await response.json();
+      // console.log("Success:", result);
       alert("Form submitted successfully!");
 
       // Optional: Reset form after successful submission
@@ -54,8 +54,8 @@ function ContactForm() {
         phone: "",
       });
     } catch (error) {
-      console.error("Error:", error);
-      alert("There was an error submitting the form. Please try again later.");
+      // console.error("Error:", error);
+      // alert("There was an error submitting the form. Please try again later.");
     }
   };
 
