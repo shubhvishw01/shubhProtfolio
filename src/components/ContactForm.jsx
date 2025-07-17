@@ -26,7 +26,7 @@ function ContactForm() {
     }
 
     const scriptURL =
-      "https://script.google.com/macros/s/AKfycbzqxCUa9DmTr-kfRnE5PDEQsIxzp1TpolVOpXq1BRkp7niOSL4i9QziYRiLy0NyuOs8/exec"; // ✅ Make sure it's the FULL DEPLOYED URL
+      "https://script.google.com/macros/s/AKfycbxqup5FtazJc7E6Sx3KWrM17-ScQZ-_im3VctN06_kbI9XKtZbE8UN4dnl3JKVhmYzF/exec"; // ✅ Make sure it's the FULL DEPLOYED URL
 
     try {
       const response = await fetch(scriptURL, {
