@@ -28,30 +28,35 @@ function ContactForm() {
     const scriptURL =
       "https://script.google.com/macros/s/AKfycbzqxCUa9DmTr-kfRnE5PDEQsIxzp1TpolVOpXq1BRkp7niOSL4i9QziYRiLy0NyuOs8/exec"; // ✅ Make sure it's the FULL DEPLOYED URL
 
-    const response = await fetch(scriptURL, {
-      method: "POST",
-      // mode: "no-cors", // ✅ Use no-cors mode for Google Apps Script
-      headers: {
-        "Content-Type": "application/json", // ✅ Tell server it's JSON
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        // mode: "no-cors", // ✅ Use no-cors mode for Google Apps Script
+        headers: {
+          "Content-Type": "application/json", // ✅ Tell server it's JSON
+        },
+        body: JSON.stringify(formData),
+      });
 
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const result = await response.json();
+      console.log("Success:", result);
+      alert("Form submitted successfully!");
+
+      // Optional: Reset form after successful submission
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+        phone: "",
+      });
+    } catch (error) {
+      console.error("Error:", error);
+      alert("There was an error submitting the form. Please try again later.");
     }
-
-    const result = await response.json();
-    console.log("Success:", result);
-    alert("Form submitted successfully!");
-
-    // Optional: Reset form after successful submission
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-      phone: "",
-    });
   };
 
   return (
