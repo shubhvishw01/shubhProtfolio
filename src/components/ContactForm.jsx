@@ -31,7 +31,7 @@ function ContactForm() {
     try {
       const response = await fetch(scriptURL, {
         method: "POST",
-        mode: "no-cors", // ✅ Use no-cors mode for Google Apps Script
+        // mode: "no-cors", // ✅ Use no-cors mode for Google Apps Script
         headers: {
           "Content-Type": "application/json", // ✅ Tell server it's JSON
         },
