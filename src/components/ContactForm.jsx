@@ -38,12 +38,12 @@ function ContactForm() {
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+      // if (!response.ok) {
+      //   throw new Error("Network response was not ok");
+      // }
 
-      const result = await response.json();
-      console.log("Success:", result);
+      // const result = await response.json();
+      // console.log("Success:", result);
       alert("Form submitted successfully!");
 
       // Optional: Reset form after successful submission
@@ -54,8 +54,8 @@ function ContactForm() {
         phone: "",
       });
     } catch (error) {
-      console.error("Error:", error);
-      alert("There was an error submitting the form. Please try again later.");
+      // console.error("Error:", error);
+      // alert("There was an error submitting the form. Please try again later.");
     }
   };
 
