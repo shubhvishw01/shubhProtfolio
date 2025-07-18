@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -51,6 +52,8 @@ function ContactForm() {
       });
 
       setStatus("success");
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
 
       // Auto close after 3s
       setTimeout(() => {

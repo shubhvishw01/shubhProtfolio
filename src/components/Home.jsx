@@ -2,12 +2,12 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleConnectClick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    navigate("/contact");
-  };
+  // const handleConnectClick = () => {
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  //   navigate("/contact");
+  // };
 
   return (
     <section className="py-10 flex flex-col items-center justify-center text-center px-6">
@@ -64,7 +64,7 @@ const Home = () => {
 
         {/* See My Work Button */}
         <Link
-          onClick={handleConnectClick}
+          // onClick={handleConnectClick}
           to="/contact"
           className="px-6 py-3 bg-gradient-to-r from-green-400 to-emerald-600 text-white rounded-full shadow-lg hover:scale-105 transition-transform text-center"
         >
