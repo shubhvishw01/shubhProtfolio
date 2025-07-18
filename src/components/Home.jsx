@@ -40,12 +40,48 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Button Group */}
+      <div className="flex flex-col md:flex-row gap-4 mt-10">
+        {/* Download Resume Button */}
+        <button
+          onClick={() => {
+            const link = document.createElement("a");
+            link.href = "/resume.pdf";
+            link.download = "Shubham-Vishwakarma-Resume.pdf";
+            link.click();
+          }}
+          className="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-full shadow-lg hover:scale-105 transition-transform"
+        >
+          📄 Download Resume
+        </button>
+
+        {/* See My Work Button */}
+        <Link
+          to="/contact"
+          className="px-6 py-3 bg-gradient-to-r from-green-400 to-emerald-600 text-white rounded-full shadow-lg hover:scale-105 transition-transform text-center"
+        >
+          🚀 Connect me
+        </Link>
+      </div>
+
+      {/* <button
+        onClick={() => {
+          const link = document.createElement("a");
+          link.href = "/resume.pdf"; // public folder path
+          link.download = "Shubham-Vishwakarma-Resume.pdf"; // custom filename
+          link.click();
+        }}
+        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+      >
+        📄 Download Resume
+      </button>
+
       <Link
         to="/projects"
         className="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full shadow"
       >
         See My Work
-      </Link>
+      </Link> */}
 
       {/* <a
         href="/projects"

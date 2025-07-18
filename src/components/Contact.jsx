@@ -18,7 +18,6 @@ const Contact = () => {
                 <a
                   href="mailto:shubh.vishw01@gmail.com"
                   className="text-blue-600 hover:underline"
-                  target="_blank"
                 >
                   shubh.vishw01@gmail.com
                 </a>
