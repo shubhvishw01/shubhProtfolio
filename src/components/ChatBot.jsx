@@ -8,11 +8,14 @@ const ChatBot = () => {
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const chatRef = useRef(null);
+  const [isTyping, setIsTyping] = useState(false);
 
   const botReply = (userMsg) => {
     const msg = userMsg.toLowerCase();
     if (msg.includes("hello") || msg.includes("hi") || msg.includes("hey"))
       return "Hello! 👋 How can I assist you today?";
+    if (msg.includes("how are you") || msg.includes("whats up"))
+      return "I'm fine, hope you are also well! 👋 How can I assist you today?";
     if (msg.includes("your name"))
       return "I’m Shubham’s personal portfolio assistant. 🤖";
     if (msg.includes("who are you") || msg.includes("what are you"))
@@ -20,17 +23,18 @@ const ChatBot = () => {
     if (msg.includes("project") || msg.includes("projects"))
       return "You can explore my projects in the 'Projects' section.";
     if (msg.includes("skills") || msg.includes("technology"))
-      return "I have strong skills in the MERN Stack: MongoDB, Express, React, Node.js.";
+      return "I have strong skills in ReactJS & basic MERN Stack: MongoDB, Express, React, Node.js.";
     if (msg.includes("experience"))
-      return "I have 1 year of hands-on experience as a React Developer.";
+      return "I have 1+ year of hands-on experience as a React Developer.";
     if (msg.includes("resume") || msg.includes("cv"))
-      return "You can download my resume from the 'Resume' section.";
+      return "You can download my resume from the 'Home' section.";
     if (msg.includes("contact") || msg.includes("email"))
       return "Reach me at shubh.vishw01@gmail.com or via the Contact form.";
-    if (msg.includes("location") || msg.includes("city"))
-      return "I'm based in Indore, India. 📍";
+    if (msg.includes("preferred location") || msg.includes("city"))
+      return "I'm based in Indore, India.📍 & comfortable to relocate.";
     if (msg.includes("job") || msg.includes("hiring"))
       return "Yes! I'm open to React Developer opportunities.";
+    if (msg.includes("ok") || msg.includes("OK")) return "Thank you.";
     if (msg.includes("linkedin"))
       return "You can find my LinkedIn in the footer section. 🔗";
     if (msg.includes("thank")) return "You're welcome! 😊";
@@ -44,16 +48,20 @@ const ChatBot = () => {
     if (input.trim() === "") return;
     const userMessage = { sender: "user", text: input };
     setMessages((prev) => [...prev, userMessage]);
+    setIsTyping(true);
+    const inputText = input;
     setInput("");
+
     setTimeout(() => {
-      const response = botReply(input);
+      const response = botReply(inputText);
       setMessages((prev) => [...prev, { sender: "bot", text: response }]);
-    }, 500);
+      setIsTyping(false);
+    }, 1200);
   };
 
   useEffect(() => {
     chatRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  }, [messages, isTyping]);
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
@@ -98,9 +106,16 @@ const ChatBot = () => {
                       : "bg-gray-100 self-start mr-auto text-left"
                   }`}
                 >
+                  <strong>{msg.sender === "user" ? "You" : "Bot"}:</strong>
+                  <br />
                   {msg.text}
                 </div>
               ))}
+              {isTyping && (
+                <div className="text-gray-500 text-xs italic">
+                  Bot is typing...
+                </div>
+              )}
               <div ref={chatRef} />
             </div>
 
