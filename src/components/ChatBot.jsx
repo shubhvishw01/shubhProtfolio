@@ -56,7 +56,7 @@ const ChatBot = () => {
       const response = botReply(inputText);
       setMessages((prev) => [...prev, { sender: "bot", text: response }]);
       setIsTyping(false);
-    }, 1200);
+    }, 900);
   };
 
   useEffect(() => {
@@ -106,13 +106,13 @@ const ChatBot = () => {
                       : "bg-gray-100 self-start mr-auto text-left"
                   }`}
                 >
-                  <strong>{msg.sender === "user" ? "You" : "Bot"}:</strong>
+                  <strong>{msg.sender === "user" ? "You" : "🤖"}</strong>
                   <br />
                   {msg.text}
                 </div>
               ))}
               {isTyping && (
-                <div className="text-gray-500 text-xs italic">
+                <div className="text-red-700 text-xs italic">
                   Bot is typing...
                 </div>
               )}
